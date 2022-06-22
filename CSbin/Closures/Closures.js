@@ -190,7 +190,7 @@ getDay(); // => should log 'Sat'
 getDay(); // => should log 'Sun'
 console.log('--------------------------------------------------')
 
-console.log('------------------CHALLENGE 10---------------------')
+console.log('------------------CHALLENGE 10--------------------')
 function defineFirstArg(func, arg) {
     return function(secondArg) {
         return func(arg,secondArg)
@@ -203,11 +203,13 @@ const subFrom20 = defineFirstArg(subtract, 20);
 console.log(subFrom20(5)); // => should log 15
 console.log('--------------------------------------------------')
 
-console.log('------------------CHALLENGE 11---------------------')
+console.log('------------------CHALLENGE 11--------------------')
 function dateStamp(func) {
-    console.error('TO DO - objects');
     return function(value){
-        return func(value);
+        var obj = {};
+        obj.date = new Date();
+        obj.output = func(value);
+        return obj
     }
 }
 
@@ -217,8 +219,9 @@ console.log(stampedMultBy2(4)); // => should log { date: (today's date), output:
 console.log(stampedMultBy2(6)); // => should log { date: (today's date), output: 12 }
 console.log('--------------------------------------------------')
 
+console.log('------------------CHALLENGE 12--------------------')
 function censor() {
-    console.error('TO DO - objects')
+    console.error('TODO')
     return function (current, fresh){
     }
 }
@@ -228,3 +231,16 @@ const changeScene = censor();
 changeScene('dogs', 'cats');
 changeScene('quick', 'slow');
 console.log(changeScene('The quick, brown fox jumps over the lazy dogs.')); // => should log 'The slow, brown fox jumps over the lazy cats.'
+console.log('--------------------------------------------------')
+
+console.log('------------------CHALLENGE 13--------------------')
+function createSecretHolder(secret) {
+
+}
+
+// /*** Uncomment these to check your work! ***/
+
+obj = createSecretHolder(5)
+obj.getSecret() // => returns 5
+//obj.setSecret(2)
+//obj.getSecret() // => returns 2
